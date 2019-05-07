@@ -2,7 +2,7 @@ import React from 'react';
 import { Router as DefaultRouter, Route, Switch } from 'react-router-dom';
 import dynamic from 'umi/dynamic';
 import renderRoutes from 'umi/_renderRoutes';
-import RendererWrapper0 from '/Volumes/Data/githubStore/react-admin-template/src/pages/.umi/LocaleWrapper.jsx'
+import RendererWrapper0 from 'E:/githubReppository/ant-design-admin/src/pages/.umi/LocaleWrapper.jsx'
 import _dvaDynamic from 'dva/dynamic'
 
 let Router = require('dva/router').routerRedux.ConnectedRouter;
@@ -13,7 +13,7 @@ let routes = [
     "component": _dvaDynamic({
   
   component: () => import(/* webpackChunkName: "layouts__UserLayout" */'../../layouts/UserLayout'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
     "routes": [
       {
@@ -27,10 +27,10 @@ let routes = [
         "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__User__models__register.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/User/models/register.js').then(m => { return { namespace: 'register',...m.default}})
+  import(/* webpackChunkName: 'p__User__models__register.js' */'E:/githubReppository/ant-design-admin/src/pages/User/models/register.js').then(m => { return { namespace: 'register',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__User__Login" */'../User/Login'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
         "exact": true
       },
@@ -40,10 +40,10 @@ models: () => [
         "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__User__models__register.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/User/models/register.js').then(m => { return { namespace: 'register',...m.default}})
+  import(/* webpackChunkName: 'p__User__models__register.js' */'E:/githubReppository/ant-design-admin/src/pages/User/models/register.js').then(m => { return { namespace: 'register',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__User__Register" */'../User/Register'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
         "exact": true
       },
@@ -53,10 +53,10 @@ models: () => [
         "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__User__models__register.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/User/models/register.js').then(m => { return { namespace: 'register',...m.default}})
+  import(/* webpackChunkName: 'p__User__models__register.js' */'E:/githubReppository/ant-design-admin/src/pages/User/models/register.js').then(m => { return { namespace: 'register',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__User__RegisterResult" */'../User/RegisterResult'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
         "exact": true
       },
@@ -64,12 +64,12 @@ models: () => [
         "component": _dvaDynamic({
   
   component: () => import(/* webpackChunkName: "p__404" */'../404'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
         "exact": true
       },
       {
-        "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+        "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
       }
     ]
   },
@@ -78,7 +78,7 @@ models: () => [
     "component": _dvaDynamic({
   
   component: () => import(/* webpackChunkName: "layouts__BasicLayout" */'../../layouts/BasicLayout'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
     "Routes": [require('../Authorized').default],
     "routes": [
@@ -102,12 +102,12 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Dashboard__models__activities.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Dashboard/models/activities.js').then(m => { return { namespace: 'activities',...m.default}}),
-  import(/* webpackChunkName: 'p__Dashboard__models__chart.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Dashboard/models/chart.js').then(m => { return { namespace: 'chart',...m.default}}),
-  import(/* webpackChunkName: 'p__Dashboard__models__monitor.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Dashboard/models/monitor.js').then(m => { return { namespace: 'monitor',...m.default}})
+  import(/* webpackChunkName: 'p__Dashboard__models__activities.js' */'E:/githubReppository/ant-design-admin/src/pages/Dashboard/models/activities.js').then(m => { return { namespace: 'activities',...m.default}}),
+  import(/* webpackChunkName: 'p__Dashboard__models__chart.js' */'E:/githubReppository/ant-design-admin/src/pages/Dashboard/models/chart.js').then(m => { return { namespace: 'chart',...m.default}}),
+  import(/* webpackChunkName: 'p__Dashboard__models__monitor.js' */'E:/githubReppository/ant-design-admin/src/pages/Dashboard/models/monitor.js').then(m => { return { namespace: 'monitor',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Dashboard__Analysis" */'../Dashboard/Analysis'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
@@ -117,12 +117,12 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Dashboard__models__activities.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Dashboard/models/activities.js').then(m => { return { namespace: 'activities',...m.default}}),
-  import(/* webpackChunkName: 'p__Dashboard__models__chart.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Dashboard/models/chart.js').then(m => { return { namespace: 'chart',...m.default}}),
-  import(/* webpackChunkName: 'p__Dashboard__models__monitor.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Dashboard/models/monitor.js').then(m => { return { namespace: 'monitor',...m.default}})
+  import(/* webpackChunkName: 'p__Dashboard__models__activities.js' */'E:/githubReppository/ant-design-admin/src/pages/Dashboard/models/activities.js').then(m => { return { namespace: 'activities',...m.default}}),
+  import(/* webpackChunkName: 'p__Dashboard__models__chart.js' */'E:/githubReppository/ant-design-admin/src/pages/Dashboard/models/chart.js').then(m => { return { namespace: 'chart',...m.default}}),
+  import(/* webpackChunkName: 'p__Dashboard__models__monitor.js' */'E:/githubReppository/ant-design-admin/src/pages/Dashboard/models/monitor.js').then(m => { return { namespace: 'monitor',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Dashboard__Monitor" */'../Dashboard/Monitor'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
@@ -132,17 +132,17 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Dashboard__models__activities.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Dashboard/models/activities.js').then(m => { return { namespace: 'activities',...m.default}}),
-  import(/* webpackChunkName: 'p__Dashboard__models__chart.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Dashboard/models/chart.js').then(m => { return { namespace: 'chart',...m.default}}),
-  import(/* webpackChunkName: 'p__Dashboard__models__monitor.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Dashboard/models/monitor.js').then(m => { return { namespace: 'monitor',...m.default}})
+  import(/* webpackChunkName: 'p__Dashboard__models__activities.js' */'E:/githubReppository/ant-design-admin/src/pages/Dashboard/models/activities.js').then(m => { return { namespace: 'activities',...m.default}}),
+  import(/* webpackChunkName: 'p__Dashboard__models__chart.js' */'E:/githubReppository/ant-design-admin/src/pages/Dashboard/models/chart.js').then(m => { return { namespace: 'chart',...m.default}}),
+  import(/* webpackChunkName: 'p__Dashboard__models__monitor.js' */'E:/githubReppository/ant-design-admin/src/pages/Dashboard/models/monitor.js').then(m => { return { namespace: 'monitor',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Dashboard__Workplace" */'../Dashboard/Workplace'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
           {
-            "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+            "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
           }
         ]
       },
@@ -157,10 +157,10 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Forms__models__form.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Forms/models/form.js').then(m => { return { namespace: 'form',...m.default}})
+  import(/* webpackChunkName: 'p__Forms__models__form.js' */'E:/githubReppository/ant-design-admin/src/pages/Forms/models/form.js').then(m => { return { namespace: 'form',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Forms__BasicForm" */'../Forms/BasicForm'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
@@ -170,10 +170,10 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Forms__models__form.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Forms/models/form.js').then(m => { return { namespace: 'form',...m.default}})
+  import(/* webpackChunkName: 'p__Forms__models__form.js' */'E:/githubReppository/ant-design-admin/src/pages/Forms/models/form.js').then(m => { return { namespace: 'form',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Forms__StepForm" */'../Forms/StepForm'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "hideChildrenInMenu": true,
             "routes": [
@@ -188,10 +188,10 @@ models: () => [
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Forms__models__form.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Forms/models/form.js').then(m => { return { namespace: 'form',...m.default}})
+  import(/* webpackChunkName: 'p__Forms__models__form.js' */'E:/githubReppository/ant-design-admin/src/pages/Forms/models/form.js').then(m => { return { namespace: 'form',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Forms__StepForm" */'../Forms/StepForm/Step1'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
                 "exact": true
               },
@@ -201,10 +201,10 @@ models: () => [
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Forms__models__form.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Forms/models/form.js').then(m => { return { namespace: 'form',...m.default}})
+  import(/* webpackChunkName: 'p__Forms__models__form.js' */'E:/githubReppository/ant-design-admin/src/pages/Forms/models/form.js').then(m => { return { namespace: 'form',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Forms__StepForm" */'../Forms/StepForm/Step2'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
                 "exact": true
               },
@@ -214,15 +214,15 @@ models: () => [
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Forms__models__form.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Forms/models/form.js').then(m => { return { namespace: 'form',...m.default}})
+  import(/* webpackChunkName: 'p__Forms__models__form.js' */'E:/githubReppository/ant-design-admin/src/pages/Forms/models/form.js').then(m => { return { namespace: 'form',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Forms__StepForm" */'../Forms/StepForm/Step3'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
                 "exact": true
               },
               {
-                "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+                "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
               }
             ]
           },
@@ -235,15 +235,15 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Forms__models__form.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Forms/models/form.js').then(m => { return { namespace: 'form',...m.default}})
+  import(/* webpackChunkName: 'p__Forms__models__form.js' */'E:/githubReppository/ant-design-admin/src/pages/Forms/models/form.js').then(m => { return { namespace: 'form',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Forms__AdvancedForm" */'../Forms/AdvancedForm'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
           {
-            "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+            "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
           }
         ]
       },
@@ -258,10 +258,10 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__List__models__rule.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/List/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
+  import(/* webpackChunkName: 'p__List__models__rule.js' */'E:/githubReppository/ant-design-admin/src/pages/List/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__List__TableList" */'../List/TableList'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
@@ -271,10 +271,10 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__List__models__rule.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/List/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
+  import(/* webpackChunkName: 'p__List__models__rule.js' */'E:/githubReppository/ant-design-admin/src/pages/List/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__List__BasicList" */'../List/BasicList'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
@@ -284,10 +284,10 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__List__models__rule.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/List/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
+  import(/* webpackChunkName: 'p__List__models__rule.js' */'E:/githubReppository/ant-design-admin/src/pages/List/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__List__CardList" */'../List/CardList'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
@@ -297,10 +297,10 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__List__models__rule.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/List/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
+  import(/* webpackChunkName: 'p__List__models__rule.js' */'E:/githubReppository/ant-design-admin/src/pages/List/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__List__List" */'../List/List'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "routes": [
               {
@@ -314,10 +314,10 @@ models: () => [
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__List__models__rule.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/List/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
+  import(/* webpackChunkName: 'p__List__models__rule.js' */'E:/githubReppository/ant-design-admin/src/pages/List/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__List__List" */'../List/Articles'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
                 "exact": true
               },
@@ -327,10 +327,10 @@ models: () => [
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__List__models__rule.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/List/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
+  import(/* webpackChunkName: 'p__List__models__rule.js' */'E:/githubReppository/ant-design-admin/src/pages/List/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__List__List" */'../List/Projects'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
                 "exact": true
               },
@@ -340,20 +340,20 @@ models: () => [
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__List__models__rule.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/List/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
+  import(/* webpackChunkName: 'p__List__models__rule.js' */'E:/githubReppository/ant-design-admin/src/pages/List/models/rule.js').then(m => { return { namespace: 'rule',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__List__List" */'../List/Applications'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
                 "exact": true
               },
               {
-                "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+                "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
               }
             ]
           },
           {
-            "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+            "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
           }
         ]
       },
@@ -368,10 +368,10 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Profile__models__profile.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Profile/models/profile.js').then(m => { return { namespace: 'profile',...m.default}})
+  import(/* webpackChunkName: 'p__Profile__models__profile.js' */'E:/githubReppository/ant-design-admin/src/pages/Profile/models/profile.js').then(m => { return { namespace: 'profile',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Profile__BasicProfile" */'../Profile/BasicProfile'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
@@ -382,10 +382,10 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Profile__models__profile.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Profile/models/profile.js').then(m => { return { namespace: 'profile',...m.default}})
+  import(/* webpackChunkName: 'p__Profile__models__profile.js' */'E:/githubReppository/ant-design-admin/src/pages/Profile/models/profile.js').then(m => { return { namespace: 'profile',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Profile__BasicProfile" */'../Profile/BasicProfile'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
@@ -398,15 +398,15 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Profile__models__profile.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Profile/models/profile.js').then(m => { return { namespace: 'profile',...m.default}})
+  import(/* webpackChunkName: 'p__Profile__models__profile.js' */'E:/githubReppository/ant-design-admin/src/pages/Profile/models/profile.js').then(m => { return { namespace: 'profile',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Profile__AdvancedProfile" */'../Profile/AdvancedProfile'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
           {
-            "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+            "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
           }
         ]
       },
@@ -421,7 +421,7 @@ models: () => [
             "component": _dvaDynamic({
   
   component: () => import(/* webpackChunkName: "p__Result__Success" */'../Result/Success'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
@@ -431,12 +431,12 @@ models: () => [
             "component": _dvaDynamic({
   
   component: () => import(/* webpackChunkName: "p__Result__Error" */'../Result/Error'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
           {
-            "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+            "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
           }
         ]
       },
@@ -451,10 +451,10 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Exception__models__error.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Exception/models/error.js').then(m => { return { namespace: 'error',...m.default}})
+  import(/* webpackChunkName: 'p__Exception__models__error.js' */'E:/githubReppository/ant-design-admin/src/pages/Exception/models/error.js').then(m => { return { namespace: 'error',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Exception__403" */'../Exception/403'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
@@ -464,10 +464,10 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Exception__models__error.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Exception/models/error.js').then(m => { return { namespace: 'error',...m.default}})
+  import(/* webpackChunkName: 'p__Exception__models__error.js' */'E:/githubReppository/ant-design-admin/src/pages/Exception/models/error.js').then(m => { return { namespace: 'error',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Exception__404" */'../Exception/404'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
@@ -477,10 +477,10 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Exception__models__error.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Exception/models/error.js').then(m => { return { namespace: 'error',...m.default}})
+  import(/* webpackChunkName: 'p__Exception__models__error.js' */'E:/githubReppository/ant-design-admin/src/pages/Exception/models/error.js').then(m => { return { namespace: 'error',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Exception__500" */'../Exception/500'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
@@ -491,15 +491,15 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Exception__models__error.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Exception/models/error.js').then(m => { return { namespace: 'error',...m.default}})
+  import(/* webpackChunkName: 'p__Exception__models__error.js' */'E:/githubReppository/ant-design-admin/src/pages/Exception/models/error.js').then(m => { return { namespace: 'error',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Exception__TriggerException" */'../Exception/TriggerException'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
           {
-            "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+            "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
           }
         ]
       },
@@ -514,7 +514,7 @@ models: () => [
             "component": _dvaDynamic({
   
   component: () => import(/* webpackChunkName: "p__Account__Center__Center" */'../Account/Center/Center'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "routes": [
               {
@@ -527,7 +527,7 @@ models: () => [
                 "component": _dvaDynamic({
   
   component: () => import(/* webpackChunkName: "p__Account__Center__Center" */'../Account/Center/Articles'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
                 "exact": true
               },
@@ -536,7 +536,7 @@ models: () => [
                 "component": _dvaDynamic({
   
   component: () => import(/* webpackChunkName: "p__Account__Center__Center" */'../Account/Center/Applications'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
                 "exact": true
               },
@@ -545,12 +545,12 @@ models: () => [
                 "component": _dvaDynamic({
   
   component: () => import(/* webpackChunkName: "p__Account__Center__Center" */'../Account/Center/Projects'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
                 "exact": true
               },
               {
-                "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+                "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
               }
             ]
           },
@@ -560,10 +560,10 @@ models: () => [
             "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
+  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'E:/githubReppository/ant-design-admin/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Account__Settings__Info" */'../Account/Settings/Info'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "routes": [
               {
@@ -576,10 +576,10 @@ models: () => [
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
+  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'E:/githubReppository/ant-design-admin/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Account__Settings__Info" */'../Account/Settings/BaseView'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
                 "exact": true
               },
@@ -588,10 +588,10 @@ models: () => [
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
+  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'E:/githubReppository/ant-design-admin/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Account__Settings__Info" */'../Account/Settings/SecurityView'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
                 "exact": true
               },
@@ -600,10 +600,10 @@ models: () => [
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
+  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'E:/githubReppository/ant-design-admin/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Account__Settings__Info" */'../Account/Settings/BindingView'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
                 "exact": true
               },
@@ -612,20 +612,20 @@ models: () => [
                 "component": _dvaDynamic({
   app: window.g_app,
 models: () => [
-  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'/Volumes/Data/githubStore/react-admin-template/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
+  import(/* webpackChunkName: 'p__Account__Settings__models__geographic.js' */'E:/githubReppository/ant-design-admin/src/pages/Account/Settings/models/geographic.js').then(m => { return { namespace: 'geographic',...m.default}})
 ],
   component: () => import(/* webpackChunkName: "p__Account__Settings__Info" */'../Account/Settings/NotificationView'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
                 "exact": true
               },
               {
-                "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+                "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
               }
             ]
           },
           {
-            "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+            "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
           }
         ]
       },
@@ -640,7 +640,7 @@ models: () => [
             "component": _dvaDynamic({
   
   component: () => import(/* webpackChunkName: "p__Editor__GGEditor__Flow" */'../Editor/GGEditor/Flow'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
@@ -650,7 +650,7 @@ models: () => [
             "component": _dvaDynamic({
   
   component: () => import(/* webpackChunkName: "p__Editor__GGEditor__Mind" */'../Editor/GGEditor/Mind'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
@@ -660,30 +660,41 @@ models: () => [
             "component": _dvaDynamic({
   
   component: () => import(/* webpackChunkName: "p__Editor__GGEditor__Koni" */'../Editor/GGEditor/Koni'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
             "exact": true
           },
           {
-            "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+            "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
           }
         ]
+      },
+      {
+        "name": "newpage",
+        "icon": "highlight",
+        "path": "/newpage",
+        "component": _dvaDynamic({
+  
+  component: () => import(/* webpackChunkName: "p__newpage__demo" */'../newpage/demo'),
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
+}),
+        "exact": true
       },
       {
         "component": _dvaDynamic({
   
   component: () => import(/* webpackChunkName: "p__404" */'../404'),
-  LoadingComponent: require('/Volumes/Data/githubStore/react-admin-template/src/components/PageLoading/index').default,
+  LoadingComponent: require('E:/githubReppository/ant-design-admin/src/components/PageLoading/index').default,
 }),
         "exact": true
       },
       {
-        "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+        "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
       }
     ]
   },
   {
-    "component": () => React.createElement(require('/Volumes/Data/githubStore/react-admin-template/node_modules/_umi-build-dev@1.8.3@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+    "component": () => React.createElement(require('E:/githubReppository/ant-design-admin/node_modules/_umi-build-dev@1.8.4@umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
   }
 ];
 window.g_routes = routes;

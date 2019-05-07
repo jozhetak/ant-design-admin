@@ -28,7 +28,7 @@ defaultAntd = defaultAntd.default || defaultAntd;
 const localeInfo = {
   'en-US': {
     messages: {
-      ...require('/Volumes/Data/githubStore/react-admin-template/src/locales/en-US.js').default,
+      ...require('E:/githubReppository/ant-design-admin/src/locales/en-US.js').default,
     },
     locale: 'en-US',
     antd: require('antd/lib/locale-provider/en_US'),
@@ -37,7 +37,7 @@ const localeInfo = {
   },
   'pt-BR': {
     messages: {
-      ...require('/Volumes/Data/githubStore/react-admin-template/src/locales/pt-BR.js').default,
+      ...require('E:/githubReppository/ant-design-admin/src/locales/pt-BR.js').default,
     },
     locale: 'pt-BR',
     antd: require('antd/lib/locale-provider/pt_BR'),
@@ -46,7 +46,7 @@ const localeInfo = {
   },
   'zh-CN': {
     messages: {
-      ...require('/Volumes/Data/githubStore/react-admin-template/src/locales/zh-CN.js').default,
+      ...require('E:/githubReppository/ant-design-admin/src/locales/zh-CN.js').default,
     },
     locale: 'zh-CN',
     antd: require('antd/lib/locale-provider/zh_CN'),
@@ -55,7 +55,7 @@ const localeInfo = {
   },
   'zh-TW': {
     messages: {
-      ...require('/Volumes/Data/githubStore/react-admin-template/src/locales/zh-TW.js').default,
+      ...require('E:/githubReppository/ant-design-admin/src/locales/zh-TW.js').default,
     },
     locale: 'zh-TW',
     antd: require('antd/lib/locale-provider/zh_TW'),
@@ -70,10 +70,15 @@ let appLocale = {
   data: require('react-intl/locale-data/zh'),
   momentLocale: 'zh-cn',
 };
+
+const runtimeLocale = window.g_plugins.mergeConfig('locale') || {};
+const runtimeLocaleDefault =  typeof runtimeLocale.default === 'function' ? runtimeLocale.default() : runtimeLocale.default;
 if (useLocalStorage && localStorage.getItem('umi_locale') && localeInfo[localStorage.getItem('umi_locale')]) {
   appLocale = localeInfo[localStorage.getItem('umi_locale')];
 } else if (localeInfo[navigator.language] && baseNavigator){
   appLocale = localeInfo[navigator.language];
+} else if(localeInfo[runtimeLocaleDefault]){
+  appLocale = localeInfo[runtimeLocaleDefault];
 } else {
   appLocale = localeInfo['zh-CN'] || appLocale;
 }

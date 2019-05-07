@@ -289,6 +289,11 @@ export default [
             component: './Editor/GGEditor/Koni',
           },
         ],
+      },{
+        name:'newpage',
+        icon:'highlight',
+        path:'/newpage',
+        component: './newpage/demo'
       },
       {
         component: '404',

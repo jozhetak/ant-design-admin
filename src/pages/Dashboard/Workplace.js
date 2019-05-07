@@ -1,12 +1,16 @@
+// pureComponent 为了避免render函数重复执行
 import React, { PureComponent } from 'react';
 import moment from 'moment';
+// dva集成了react-redux的connect
 import { connect } from 'dva';
+// 引入 link 跳转
 import Link from 'umi/link';
+
 import { Row, Col, Card, List, Avatar } from 'antd';
 import { Radar } from '@/components/Charts';
 import EditableLinkGroup from '@/components/EditableLinkGroup';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
-
+// 引入 
 import styles from './Workplace.less';
 
 const links = [
@@ -37,7 +41,7 @@ const links = [
 ];
 
 @connect(({ user, project, activities, chart, loading }) => ({
-  currentUser: user.currentUser,
+  currentUser: user.currentUser, //当前用户
   project,
   activities,
   chart,
@@ -45,6 +49,7 @@ const links = [
   projectLoading: loading.effects['project/fetchNotice'],
   activitiesLoading: loading.effects['activities/fetchList'],
 }))
+
 class Workplace extends PureComponent {
   componentDidMount() {
     const { dispatch } = this.props;

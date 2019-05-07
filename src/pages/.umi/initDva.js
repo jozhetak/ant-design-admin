@@ -14,10 +14,10 @@ app.use(createLoading());
   app.use(plugin);
 });
 
-app.model({ namespace: 'global', ...(require('/Volumes/Data/githubStore/react-admin-template/src/models/global.js').default) });
-app.model({ namespace: 'list', ...(require('/Volumes/Data/githubStore/react-admin-template/src/models/list.js').default) });
-app.model({ namespace: 'login', ...(require('/Volumes/Data/githubStore/react-admin-template/src/models/login.js').default) });
-app.model({ namespace: 'menu', ...(require('/Volumes/Data/githubStore/react-admin-template/src/models/menu.js').default) });
-app.model({ namespace: 'project', ...(require('/Volumes/Data/githubStore/react-admin-template/src/models/project.js').default) });
-app.model({ namespace: 'setting', ...(require('/Volumes/Data/githubStore/react-admin-template/src/models/setting.js').default) });
-app.model({ namespace: 'user', ...(require('/Volumes/Data/githubStore/react-admin-template/src/models/user.js').default) });
+app.model({ namespace: 'global', ...(require('E:/githubReppository/ant-design-admin/src/models/global.js').default) });
+app.model({ namespace: 'list', ...(require('E:/githubReppository/ant-design-admin/src/models/list.js').default) });
+app.model({ namespace: 'login', ...(require('E:/githubReppository/ant-design-admin/src/models/login.js').default) });
+app.model({ namespace: 'menu', ...(require('E:/githubReppository/ant-design-admin/src/models/menu.js').default) });
+app.model({ namespace: 'project', ...(require('E:/githubReppository/ant-design-admin/src/models/project.js').default) });
+app.model({ namespace: 'setting', ...(require('E:/githubReppository/ant-design-admin/src/models/setting.js').default) });
+app.model({ namespace: 'user', ...(require('E:/githubReppository/ant-design-admin/src/models/user.js').default) });
