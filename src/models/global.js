@@ -9,13 +9,14 @@ export default {
   },
 
   effects: {
+    //无额外参数就用 _  有额外参数传对象{}  ， select用来取值
     *fetchNotices(_, { call, put, select }) {
       const data = yield call(queryNotices);
       yield put({
         type: 'saveNotices',
         payload: data,
       });
-      const unreadCount = yield select(
+      const unreadCount = yield select( //取值
         state => state.global.notices.filter(item => !item.read).length
       );
       yield put({
@@ -26,6 +27,7 @@ export default {
         },
       });
     },
+    //
     *clearNotices({ payload }, { put, select }) {
       yield put({
         type: 'saveClearedNotices',

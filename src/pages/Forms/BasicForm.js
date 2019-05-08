@@ -1,18 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import { formatMessage, FormattedMessage } from 'umi-plugin-react/locale';
-import {
-  Form,
-  Input,
-  DatePicker,
-  Select,
-  Button,
-  Card,
-  InputNumber,
-  Radio,
-  Icon,
-  Tooltip,
-} from 'antd';
+import {Form,Input,DatePicker,Select,Button,Card,InputNumber,Radio,Icon,Tooltip} from 'antd';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import styles from './style.less';
 
@@ -26,10 +15,13 @@ const { TextArea } = Input;
 }))
 @Form.create()
 class BasicForms extends PureComponent {
+  //提交表单
   handleSubmit = e => {
     const { dispatch, form } = this.props;
     e.preventDefault();
     form.validateFieldsAndScroll((err, values) => {
+      //values 为输入值
+      console.log(values)
       if (!err) {
         dispatch({
           type: 'form/submitRegularForm',
@@ -38,13 +30,11 @@ class BasicForms extends PureComponent {
       }
     });
   };
-
   render() {
     const { submitting } = this.props;
-    const {
-      form: { getFieldDecorator, getFieldValue },
-    } = this.props;
-
+    //经过 Form.create 包装的组件将会自带 this.props.form 属性，this.props.form 提供的 API
+      //getFieldDecorator: 双向绑定
+    const {form: { getFieldDecorator, getFieldValue }} = this.props;
     const formItemLayout = {
       labelCol: {
         xs: { span: 24 },
@@ -70,16 +60,15 @@ class BasicForms extends PureComponent {
         content={<FormattedMessage id="app.forms.basic.description" />}
       >
         <Card bordered={false}>
-          <Form onSubmit={this.handleSubmit} hideRequiredMark style={{ marginTop: 8 }}>
+          <Form onSubmit={this.handleSubmit}  style={{ marginTop: 8 }}>
             <FormItem {...formItemLayout} label={<FormattedMessage id="form.title.label" />}>
-              {getFieldDecorator('title', {
-                rules: [
-                  {
-                    required: true,
-                    message: formatMessage({ id: 'validation.title.required' }),
-                  },
-                ],
-              })(<Input placeholder={formatMessage({ id: 'form.title.placeholder' })} />)}
+              {
+                getFieldDecorator(
+                  'title',
+                  { rules: [ {required: true,message: formatMessage({ id: 'validation.title.required' })}]}
+                )
+                (<Input placeholder={formatMessage({ id: 'form.title.placeholder' })} />)
+              }
             </FormItem>
             <FormItem {...formItemLayout} label={<FormattedMessage id="form.date.label" />}>
               {getFieldDecorator('date', {
