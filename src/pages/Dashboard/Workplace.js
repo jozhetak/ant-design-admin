@@ -1,83 +1,50 @@
 // pureComponent 为了避免render函数重复执行
-import React, { PureComponent } from 'react';
-import moment from 'moment';
+import React, { PureComponent } from "react";
+import moment from "moment";
 // dva集成了react-redux的connect
-import { connect } from 'dva';
+import { connect } from "dva";
 // 引入 link 跳转
-import Link from 'umi/link';
+import Link from "umi/link";
 
-import { Row, Col, Card, List, Avatar } from 'antd';
-import { Radar } from '@/components/Charts';
-import EditableLinkGroup from '@/components/EditableLinkGroup';
-import PageHeaderWrapper from '@/components/PageHeaderWrapper';
+import { Row, Col, Card, List, Avatar } from "antd";
+import { Radar } from "@/components/Charts";
+import EditableLinkGroup from "@/components/EditableLinkGroup";
+import PageHeaderWrapper from "@/components/PageHeaderWrapper";
 // 引入 
-import styles from './Workplace.less';
+import styles from "./Workplace.less";
 
 const links = [
-  {
-    title: '操作一',
-    href: '',
-  },
-  {
-    title: '操作二',
-    href: '',
-  },
-  {
-    title: '操作三',
-    href: '',
-  },
-  {
-    title: '操作四',
-    href: '',
-  },
-  {
-    title: '操作五',
-    href: '',
-  },
-  {
-    title: '操作六',
-    href: '',
-  },
+  {title: "操作一", href:""},
+  {title: "操作二",href: ""},
+  {title: "操作三",href: ""},
 ];
-
+//loading 是加载数据调用reducer中，此处先从store中获取 1111111111111111111
 @connect(({ user, project, activities, chart, loading }) => ({
   currentUser: user.currentUser, //当前用户
-  project,
-  activities,
-  chart,
-  currentUserLoading: loading.effects['user/fetchCurrent'],
-  projectLoading: loading.effects['project/fetchNotice'],
-  activitiesLoading: loading.effects['activities/fetchList'],
+  project,//当前项目
+  activities,//活动
+  chart, //图表数据
+  currentUserLoading: loading.effects["user/fetchCurrent"], //拉取当前用户
+  projectLoading: loading.effects["project/fetchNotice"],//拉取进行中的项目
+  activitiesLoading: loading.effects["activities/fetchList"] //拉取动态
 }))
 
 class Workplace extends PureComponent {
-  componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch({
-      type: 'user/fetchCurrent',
-    });
-    dispatch({
-      type: 'project/fetchNotice',
-    });
-    dispatch({
-      type: 'activities/fetchList',
-    });
-    dispatch({
-      type: 'chart/fetch',
-    });
+  componentDidMount() { //一系列请求数据
+    const { dispatch } = this.props; //2222222222222222222
+    dispatch({type: "user/fetchCurrent"});
+    dispatch({type: "project/fetchNotice"});
+    dispatch({type: "activities/fetchList"});
+    dispatch({type: "chart/fetch"});
   }
 
   componentWillUnmount() {
     const { dispatch } = this.props;
-    dispatch({
-      type: 'chart/clear',
-    });
+    dispatch({type: "chart/clear"});
   }
-
+  //渲染动态
   renderActivities() {
-    const {
-      activities: { list },
-    } = this.props;
+    const { activities: { list } } = this.props;
     return list.map(item => {
       const events = item.template.split(/@\{([^{}]*)\}/gi).map(key => {
         if (item[key]) {
@@ -92,7 +59,7 @@ class Workplace extends PureComponent {
       return (
         <List.Item key={item.id}>
           <List.Item.Meta
-            avatar={<Avatar src={item.user.avatar} />}
+            avatar={<Avatar src={item.user.avatar}/>}
             title={
               <span>
                 <a className={styles.username}>{item.user.name}</a>
@@ -115,17 +82,17 @@ class Workplace extends PureComponent {
     const {
       currentUser,
       currentUserLoading,
-      project: { notice },
+      project: { notice },//相当于取出notice赋值  const notice  = project.notice
       projectLoading,
       activitiesLoading,
-      chart: { radarData },
+      chart: { radarData }
     } = this.props;
 
     const pageHeaderContent =
       currentUser && Object.keys(currentUser).length ? (
         <div className={styles.pageHeaderContent}>
           <div className={styles.avatar}>
-            <Avatar size="large" src={currentUser.avatar} />
+            <Avatar size="large" src={currentUser.avatar}/>
           </div>
           <div className={styles.content}>
             <div className={styles.contentTitle}>
@@ -182,14 +149,14 @@ class Workplace extends PureComponent {
                     <Card.Meta
                       title={
                         <div className={styles.cardTitle}>
-                          <Avatar size="small" src={item.logo} />
+                          <Avatar size="small" src={item.logo}/>
                           <Link to={item.href}>{item.title}</Link>
                         </div>
                       }
                       description={item.description}
                     />
                     <div className={styles.projectItemContent}>
-                      <Link to={item.memberLink}>{item.member || ''}</Link>
+                      <Link to={item.memberLink}>{item.member || ""}</Link>
                       {item.updatedAt && (
                         <span className={styles.datetime} title={item.updatedAt}>
                           {moment(item.updatedAt).fromNow()}
@@ -219,7 +186,8 @@ class Workplace extends PureComponent {
               bordered={false}
               bodyStyle={{ padding: 0 }}
             >
-              <EditableLinkGroup onAdd={() => {}} links={links} linkElement={Link} />
+              <EditableLinkGroup onAdd={() => {
+              }} links={links} linkElement={Link}/>
             </Card>
             <Card
               style={{ marginBottom: 24 }}
@@ -228,7 +196,8 @@ class Workplace extends PureComponent {
               loading={radarData.length === 0}
             >
               <div className={styles.chart}>
-                <Radar hasLegend height={343} data={radarData} />
+                {/*雷达图*/}
+                <Radar hasLegend height={343} data={radarData}/>
               </div>
             </Card>
             <Card
@@ -242,7 +211,7 @@ class Workplace extends PureComponent {
                   {notice.map(item => (
                     <Col span={12} key={`members-item-${item.id}`}>
                       <Link to={item.href}>
-                        <Avatar src={item.logo} size="small" />
+                        <Avatar src={item.logo} size="small"/>
                         <span className={styles.member}>{item.member}</span>
                       </Link>
                     </Col>

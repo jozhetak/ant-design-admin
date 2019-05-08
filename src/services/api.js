@@ -5,7 +5,7 @@ export async function queryProjectNotice() {
   return request('/api/project/notice');
 }
 
-export async function queryActivities() {
+export async function queryActivities() { //查询动态
   return request('/api/activities');
 }
 

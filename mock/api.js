@@ -1,15 +1,6 @@
 import mockjs from 'mockjs';
 
-const titles = [
-  'Alipay',
-  'Angular',
-  'Ant Design',
-  'Ant Design Pro',
-  'Bootstrap',
-  'React',
-  'Vue',
-  'Webpack',
-];
+const titles = ['Alipay','Angular','Ant Design','Ant Design Pro','Bootstrap','React','Vue','Webpack'];
 const avatars = [
   'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png', // Alipay
   'https://gw.alipayobjects.com/zos/rmsportal/zOsKZmFRdUtvpqCImOVY.png', // Angular
@@ -47,19 +38,7 @@ const desc = [
   '城镇中有那么多的酒馆，她却偏偏走进了我的酒馆',
   '那时候我只会想自己想要什么，从不想自己拥有什么',
 ];
-
-const user = [
-  '付小小',
-  '曲丽丽',
-  '林东东',
-  '周星星',
-  '吴加好',
-  '朱偏右',
-  '鱼酱',
-  '乐哥',
-  '谭小仪',
-  '仲尼',
-];
+const user = ['乐哥','谭小仪','仲尼'];
 
 function fakeList(count) {
   const list = [];

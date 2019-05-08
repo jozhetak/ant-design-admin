@@ -1,5 +1,4 @@
 import mockjs from 'mockjs';
-
 const basicGoods = [
   {
     id: '1234561',
@@ -34,7 +33,6 @@ const basicGoods = [
     amount: '25.50',
   },
 ];
-
 const basicProgress = [
   {
     key: '1',
@@ -77,7 +75,6 @@ const basicProgress = [
     cost: '5mins',
   },
 ];
-
 const advancedOperation1 = [
   {
     key: 'op1',
@@ -120,7 +117,6 @@ const advancedOperation1 = [
     memo: '-',
   },
 ];
-
 const advancedOperation2 = [
   {
     key: 'op1',
@@ -131,7 +127,6 @@ const advancedOperation2 = [
     memo: '-',
   },
 ];
-
 const advancedOperation3 = [
   {
     key: 'op1',
