@@ -4,7 +4,7 @@ export default {
   state: {
     list: [],
   },
-  effects: { //相当于action
+  effects: { //相当于action ，异步
     *fetchList(_, { call, put }) {
       const response = yield call(queryActivities); //相当于一个等待异步结果过程
       yield put({ // 这里相当于action

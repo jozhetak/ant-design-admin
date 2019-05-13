@@ -10,7 +10,7 @@ import { Row, Col, Card, List, Avatar } from "antd";
 import { Radar } from "@/components/Charts";
 import EditableLinkGroup from "@/components/EditableLinkGroup";
 import PageHeaderWrapper from "@/components/PageHeaderWrapper";
-// 引入 
+// 引入
 import styles from "./Workplace.less";
 
 const links = [
@@ -24,9 +24,9 @@ const links = [
   project,//当前项目
   activities,//活动
   chart, //图表数据
-  currentUserLoading: loading.effects["user/fetchCurrent"], //拉取当前用户
+  currentUserLoading: loading.effects["user/fetchCurrent"], //拉取当前用户 的 状态  用来组件loading
   projectLoading: loading.effects["project/fetchNotice"],//拉取进行中的项目
-  activitiesLoading: loading.effects["activities/fetchList"] //拉取动态
+  activitiesLoading: loading.effects["activities/fetchList"] //拉取动态,
 }))
 
 class Workplace extends PureComponent {
@@ -36,9 +36,10 @@ class Workplace extends PureComponent {
     dispatch({type: "project/fetchNotice"});
     dispatch({type: "activities/fetchList"});
     dispatch({type: "chart/fetch"});
+    console.log(this.props)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount() { // 页面卸载时 清空chart数据
     const { dispatch } = this.props;
     dispatch({type: "chart/clear"});
   }
@@ -132,6 +133,7 @@ class Workplace extends PureComponent {
         content={pageHeaderContent}
         extraContent={extraContent}
       >
+        <a href="http://dev.qingxiangchuxing.com/images/upload/private/signNatrue/2019/20/70/96/cz123.pdf">下载吧</a>
         <Row gutter={24}>
           <Col xl={16} lg={24} md={24} sm={24} xs={24}>
             <Card

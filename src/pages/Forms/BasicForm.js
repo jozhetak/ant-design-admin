@@ -46,14 +46,12 @@ class BasicForms extends PureComponent {
         md: { span: 10 },
       },
     };
-
     const submitFormLayout = {
       wrapperCol: {
         xs: { span: 24, offset: 0 },
         sm: { span: 10, offset: 7 },
       },
     };
-
     return (
       <PageHeaderWrapper
         title={<FormattedMessage id="app.forms.basic.title" />}
