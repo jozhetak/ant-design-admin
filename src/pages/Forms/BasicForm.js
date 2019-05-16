@@ -13,12 +13,18 @@ const { TextArea } = Input;
 @connect(({ loading }) => ({
   submitting: loading.effects['form/submitRegularForm'],
 }))
+// 包装组件
+//经过 Form.create 包装的组件将会自带 this.props.form 属性，this.props.form 提供的 API
 @Form.create()
 class BasicForms extends PureComponent {
   //提交表单
   handleSubmit = e => {
     const { dispatch, form } = this.props;
     e.preventDefault();
+    /*
+      校验并获取一组输入域的值与 Error，若 fieldNames 参数为空，则校验全部组件
+      具体看文档很详细 https://ant.design/components/form-cn/#components-form-demo-validate-static
+    */
     form.validateFieldsAndScroll((err, values) => {
       //values 为输入值
       console.log(values)
@@ -33,7 +39,7 @@ class BasicForms extends PureComponent {
   render() {
     const { submitting } = this.props;
     //经过 Form.create 包装的组件将会自带 this.props.form 属性，this.props.form 提供的 API
-      //getFieldDecorator: 双向绑定
+      //getFieldDecorator: 双向绑定之用
     const {form: { getFieldDecorator, getFieldValue }} = this.props;
     const formItemLayout = {
       labelCol: {

@@ -4,13 +4,12 @@ import isEqual from 'lodash/isEqual';
 import styles from './style.less';
 
 class TableForm extends PureComponent {
-  index = 0;
-
-  cacheOriginData = {};
-
+  index = 0; //临时初始id 号码
+  cacheOriginData = {}; //缓存原始数据
   constructor(props) {
+    console.log('props')
+    console.log(props)
     super(props);
-
     this.state = {
       data: props.value,
       loading: false,
@@ -18,8 +17,12 @@ class TableForm extends PureComponent {
       value: props.value,
     };
   }
-
+  /*类的内部相当于实例的原型，所有在类中直接定义的方法相当于在原型上定义方法，都会被类的实例继承，
+  但是使用static静态方法定义的不会被实例继承，而且可以被实例直接应用
+   */
+  //新的生命周期函数getDerivedStateFromProps的使用
   static getDerivedStateFromProps(nextProps, preState) {
+    //判断是否相等
     if (isEqual(nextProps.value, preState.value)) {
       return null;
     }
@@ -28,17 +31,16 @@ class TableForm extends PureComponent {
       value: nextProps.value,
     };
   }
-
   getRowByKey(key, newData) {
     const { data } = this.state;
     return (newData || data).filter(item => item.key === key)[0];
   }
-
+  //编辑
   toggleEditable = (e, key) => {
     e.preventDefault();
     const { data } = this.state;
     const newData = data.map(item => ({ ...item }));
-    const target = this.getRowByKey(key, newData);
+    const target = this.getRowByKey(key, newData); //获取key索引对应的数据row
     if (target) {
       // 进入编辑状态时保存原始数据
       if (!target.editable) {
@@ -48,7 +50,7 @@ class TableForm extends PureComponent {
       this.setState({ data: newData });
     }
   };
-
+  //添加新成员方法
   newMember = () => {
     const { data } = this.state;
     const newData = data.map(item => ({ ...item }));
@@ -64,20 +66,25 @@ class TableForm extends PureComponent {
     this.setState({ data: newData });
   };
 
-  remove(key) {
+  remove(key) { //删除
     const { data } = this.state;
     const { onChange } = this.props;
     const newData = data.filter(item => item.key !== key);
     this.setState({ data: newData });
-    onChange(newData);
+    onChange(newData); //props 里为什么会有changes事件
   }
-
+  // 表格中输入回车保存判断
   handleKeyPress(e, key) {
     if (e.key === 'Enter') {
       this.saveRow(e, key);
     }
   }
-
+  /*
+    监听输入值变化，
+    e : e.target.vaule 为用户输入值，
+    filedName:'字段名字'，
+    key:当前数据key
+  */
   handleFieldChange(e, fieldName, key) {
     const { data } = this.state;
     const newData = data.map(item => ({ ...item }));
@@ -87,15 +94,15 @@ class TableForm extends PureComponent {
       this.setState({ data: newData });
     }
   }
-
+  //保存数据
   saveRow(e, key) {
     e.persist();
     this.setState({
       loading: true,
     });
     setTimeout(() => {
-      if (this.clickedCancel) {
-        this.clickedCancel = false;
+      if (this.clickedCancel) { //如果取消状态为 true
+        this.clickedCancel = false; // 设置false
         return;
       }
       const target = this.getRowByKey(key) || {};
@@ -117,14 +124,15 @@ class TableForm extends PureComponent {
       });
     }, 500);
   }
-
+  //取消
   cancel(e, key) {
-    this.clickedCancel = true;
+    this.clickedCancel = true; //取消状态
     e.preventDefault();
     const { data } = this.state;
     const newData = data.map(item => ({ ...item }));
     const target = this.getRowByKey(key, newData);
     if (this.cacheOriginData[key]) {
+      //克隆对象，把this.cacheOriginData数据合并覆盖到到target
       Object.assign(target, this.cacheOriginData[key]);
       delete this.cacheOriginData[key];
     }
@@ -142,6 +150,8 @@ class TableForm extends PureComponent {
         width: '20%',
         render: (text, record) => {
           if (record.editable) {
+            console.log('record')
+            console.log(record)
             return (
               <Input
                 value={text}
@@ -233,7 +243,6 @@ class TableForm extends PureComponent {
         },
       },
     ];
-
     const { loading, data } = this.state;
 
     return (

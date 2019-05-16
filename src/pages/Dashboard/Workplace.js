@@ -18,7 +18,7 @@ const links = [
   {title: "操作二",href: ""},
   {title: "操作三",href: ""},
 ];
-//loading 是加载数据调用reducer中，此处先从store中获取 1111111111111111111
+//loading 获取异步action的请求是否完成的状态 ，此处先从store中获取 1111111111111111111
 @connect(({ user, project, activities, chart, loading }) => ({
   currentUser: user.currentUser, //当前用户
   project,//当前项目

@@ -1,17 +1,5 @@
 import React, { PureComponent } from 'react';
-import {
-  Card,
-  Button,
-  Form,
-  Icon,
-  Col,
-  Row,
-  DatePicker,
-  TimePicker,
-  Input,
-  Select,
-  Popover,
-} from 'antd';
+import {Card,Button,Form,Icon,Col,Row,DatePicker,TimePicker,Input,Select,Popover} from 'antd';
 import { connect } from 'dva';
 import FooterToolbar from '@/components/FooterToolbar';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
@@ -35,7 +23,6 @@ const fieldLabels = {
   dateRange2: '生效日期',
   type2: '任务类型',
 };
-
 const tableData = [
   {
     key: '1',
@@ -56,7 +43,6 @@ const tableData = [
     department: 'Sidney No. 1 Lake Park',
   },
 ];
-
 @connect(({ loading }) => ({
   submitting: loading.effects['form/submitAdvancedForm'],
 }))
@@ -73,22 +59,25 @@ class AdvancedForm extends PureComponent {
   componentWillUnmount() {
     window.removeEventListener('resize', this.resizeFooterToolbar);
   }
-
+  //获取错误信息
   getErrorInfo = () => {
-    const {
-      form: { getFieldsError },
-    } = this.props;
+    const { form: { getFieldsError } } = this.props;
     const errors = getFieldsError();
-    const errorCount = Object.keys(errors).filter(key => errors[key]).length;
+    console.log(errors) //[{filed1:[a,b]},{field2:[a,b]}]
+    const errorCount = Object.keys(errors).filter(key => errors[key]).length; //获取错误个数
+    //如果0个错误，返回null
     if (!errors || errorCount === 0) {
       return null;
     }
+    //滚动到错误的位置 方法
     const scrollToField = fieldKey => {
       const labelNode = document.querySelector(`label[for="${fieldKey}"]`);
       if (labelNode) {
+        // h5新api ，使dom元素滚动到视窗中，true || '' 顶部对齐，false为居中对齐或底部对齐
         labelNode.scrollIntoView(true);
       }
     };
+    //footer 底部错误列表
     const errorList = Object.keys(errors).map(key => {
       if (!errors[key]) {
         return null;
@@ -101,6 +90,7 @@ class AdvancedForm extends PureComponent {
         </li>
       );
     });
+
     return (
       <span className={styles.errorIcon}>
         <Popover
@@ -305,9 +295,12 @@ class AdvancedForm extends PureComponent {
           </Form>
         </Card>
         <Card title="成员管理" bordered={false}>
-          {getFieldDecorator('members', {
-            initialValue: tableData,
-          })(<TableForm />)}
+          {
+            getFieldDecorator(
+              'members',
+              {initialValue: tableData}
+            )(<TableForm />)
+          }
         </Card>
         <FooterToolbar style={{ width }}>
           {this.getErrorInfo()}
