@@ -2,12 +2,11 @@ import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'dva';
 import moment from 'moment';
 import router from 'umi/router';
-import {Row,Col,Card,Form,Input, Select,Icon,Button,Dropdown,Menu,InputNumber, DatePicker,Modal,message,Badge,Divider,Steps,Radio,} from 'antd';
+import {Row,Col,Card,Form,Input, Select,Icon,Button,Dropdown,Menu,InputNumber, DatePicker,Modal,message,Badge,Divider,Steps,Radio} from 'antd';
+//引用标准表格
 import StandardTable from '@/components/StandardTable';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
-
 import styles from './TableList.less';
-
 const FormItem = Form.Item;
 const { Step } = Steps;
 const { TextArea } = Input;
@@ -45,7 +44,7 @@ const CreateForm = Form.create()(props => {
     </Modal>
   );
 });
-
+//借用form的api
 @Form.create()
 class UpdateForm extends PureComponent {
   static defaultProps = {
@@ -56,7 +55,6 @@ class UpdateForm extends PureComponent {
 
   constructor(props) {
     super(props);
-
     this.state = {
       formVals: {
         name: props.values.name,
@@ -70,7 +68,6 @@ class UpdateForm extends PureComponent {
       },
       currentStep: 0,
     };
-
     this.formLayout = {
       labelCol: { span: 7 },
       wrapperCol: { span: 13 },
@@ -97,14 +94,14 @@ class UpdateForm extends PureComponent {
       );
     });
   };
-
+  //后退一步
   backward = () => {
     const { currentStep } = this.state;
     this.setState({
       currentStep: currentStep - 1,
     });
   };
-
+  //下一步
   forward = () => {
     const { currentStep } = this.state;
     this.setState({
@@ -189,7 +186,7 @@ class UpdateForm extends PureComponent {
       </FormItem>,
     ];
   };
-
+  //渲染footer按钮
   renderFooter = currentStep => {
     const { handleUpdateModalVisible, values } = this.props;
     if (currentStep === 1) {
@@ -244,17 +241,16 @@ class UpdateForm extends PureComponent {
         afterClose={() => handleUpdateModalVisible()}
       >
         <Steps style={{ marginBottom: 28 }} size="small" current={currentStep}>
-          <Step title="基本信息" />
-          <Step title="配置规则属性" />
-          <Step title="设定调度周期" />
+          <Step title="基本信息"/>
+          <Step title="配置规则属性"/>
+          <Step title="设定调度周期"/>
         </Steps>
         {this.renderContent(currentStep, formVals)}
       </Modal>
     );
   }
 }
-
-/* eslint react/no-multi-comp:0 */
+//本页面和store链接---------------------------------------------------------------
 @connect(({ rule, loading }) => ({
   rule,
   loading: loading.models.rule,
@@ -262,61 +258,35 @@ class UpdateForm extends PureComponent {
 @Form.create()
 class TableList extends PureComponent {
   state = {
-    modalVisible: false,
+    modalVisible: false, //模态框 开关
     updateModalVisible: false,
-    expandForm: false,
-    selectedRows: [],
-    formValues: {},
-    stepFormValues: {},
+    expandForm: false,// 搜索栏是否展开
+    selectedRows: [], //选中的行
+    formValues: {},//表单输入值
+    stepFormValues: {},//添加第几步值
   };
 
-  columns = [
-    {
-      title: '规则名称',
-      dataIndex: 'name',
-      render: text => <a onClick={() => this.previewItem(text)}>{text}</a>,
-    },
-    {
-      title: '描述',
-      dataIndex: 'desc',
-    },
-    {
-      title: '服务调用次数',
-      dataIndex: 'callNo',
-      sorter: true,
+  columns = [ //表格列
+    {title: '规则名称',dataIndex: 'name',render: text => <a onClick={() => this.previewItem(text)}>{text}</a>},
+    {title: '描述',dataIndex: 'desc'},
+    {title: '服务调用次数',dataIndex: 'callNo',sorter: true,
       render: val => `${val} 万`,
       // mark to display a total number
       needTotal: true,
     },
-    {
-      title: '状态',
-      dataIndex: 'status',
+    {title: '状态',dataIndex: 'status',
       filters: [
-        {
-          text: status[0],
-          value: 0,
-        },
-        {
-          text: status[1],
-          value: 1,
-        },
-        {
-          text: status[2],
-          value: 2,
-        },
-        {
-          text: status[3],
-          value: 3,
-        },
+        {text: status[0],value: 0},
+        {text: status[1],value: 1},
+        {text: status[2],value: 2},
+        {text: status[3],value: 3},
       ],
       render(val) {
         return <Badge status={statusMap[val]} text={status[val]} />;
       },
     },
     {
-      title: '上次调度时间',
-      dataIndex: 'updatedAt',
-      sorter: true,
+      title: '上次调度时间',dataIndex: 'updatedAt',sorter: true,
       render: val => <span>{moment(val).format('YYYY-MM-DD HH:mm:ss')}</span>,
     },
     {
@@ -363,11 +333,11 @@ class TableList extends PureComponent {
       payload: params,
     });
   };
-
+  //查看item detail
   previewItem = id => {
     router.push(`/profile/basic/${id}`);
   };
-
+  //重置
   handleFormReset = () => {
     const { form, dispatch } = this.props;
     form.resetFields();
@@ -379,7 +349,7 @@ class TableList extends PureComponent {
       payload: {},
     });
   };
-
+  //toggle 搜索框
   toggleForm = () => {
     const { expandForm } = this.state;
     this.setState({
@@ -440,20 +410,20 @@ class TableList extends PureComponent {
       });
     });
   };
-
+  //隐藏弹框modal
   handleModalVisible = flag => {
     this.setState({
       modalVisible: !!flag,
     });
   };
-
+  //更新model
   handleUpdateModalVisible = (flag, record) => {
     this.setState({
       updateModalVisible: !!flag,
       stepFormValues: record || {},
     });
   };
-
+  //添加
   handleAdd = fields => {
     const { dispatch } = this.props;
     dispatch({
@@ -632,9 +602,7 @@ class TableList extends PureComponent {
           <div className={styles.tableList}>
             <div className={styles.tableListForm}>{this.renderForm()}</div>
             <div className={styles.tableListOperator}>
-              <Button icon="plus" type="primary" onClick={() => this.handleModalVisible(true)}>
-                新建
-              </Button>
+              <Button icon="plus" type="primary" onClick={() => this.handleModalVisible(true)}>新建</Button>
               {selectedRows.length > 0 && (
                 <span>
                   <Button>批量操作</Button>
@@ -668,5 +636,4 @@ class TableList extends PureComponent {
     );
   }
 }
-
 export default TableList;

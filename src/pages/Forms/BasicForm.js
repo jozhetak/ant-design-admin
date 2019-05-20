@@ -41,6 +41,7 @@ class BasicForms extends PureComponent {
     //经过 Form.create 包装的组件将会自带 this.props.form 属性，this.props.form 提供的 API
       //getFieldDecorator: 双向绑定之用
     const {form: { getFieldDecorator, getFieldValue }} = this.props;
+    //响应式布局
     const formItemLayout = {
       labelCol: {
         xs: { span: 24 },
@@ -65,6 +66,7 @@ class BasicForms extends PureComponent {
       >
         <Card bordered={false}>
           <Form onSubmit={this.handleSubmit}  style={{ marginTop: 8 }}>
+            {/*标题-------------------------------------------------------------------*/}
             <FormItem {...formItemLayout} label={<FormattedMessage id="form.title.label" />}>
               {
                 getFieldDecorator(
@@ -74,6 +76,7 @@ class BasicForms extends PureComponent {
                 (<Input placeholder={formatMessage({ id: 'form.title.placeholder' })} />)
               }
             </FormItem>
+            {/*起止日期-------------------------------------------------------------------*/}
             <FormItem {...formItemLayout} label={<FormattedMessage id="form.date.label" />}>
               {getFieldDecorator('date', {
                 rules: [
@@ -92,6 +95,7 @@ class BasicForms extends PureComponent {
                 />
               )}
             </FormItem>
+            {/*描述-------------------------------------------------------------------*/}
             <FormItem {...formItemLayout} label={<FormattedMessage id="form.goal.label" />}>
               {getFieldDecorator('goal', {
                 rules: [
@@ -108,6 +112,7 @@ class BasicForms extends PureComponent {
                 />
               )}
             </FormItem>
+            {/*衡量标准-------------------------------------------------------------------*/}
             <FormItem {...formItemLayout} label={<FormattedMessage id="form.standard.label" />}>
               {getFieldDecorator('standard', {
                 rules: [
@@ -124,6 +129,7 @@ class BasicForms extends PureComponent {
                 />
               )}
             </FormItem>
+            {/*客户-------------------------------------------------------------------*/}
             <FormItem
               {...formItemLayout}
               label={
@@ -142,6 +148,7 @@ class BasicForms extends PureComponent {
                 <Input placeholder={formatMessage({ id: 'form.client.placeholder' })} />
               )}
             </FormItem>
+            {/*邀请评估人*/}
             <FormItem
               {...formItemLayout}
               label={
@@ -157,6 +164,7 @@ class BasicForms extends PureComponent {
                 <Input placeholder={formatMessage({ id: 'form.invites.placeholder' })} />
               )}
             </FormItem>
+            {/*权重*/}
             <FormItem
               {...formItemLayout}
               label={
@@ -177,6 +185,7 @@ class BasicForms extends PureComponent {
               )}
               <span className="ant-form-text">%</span>
             </FormItem>
+            {/*radio组件-------------------------------------------------------------------*/}
             <FormItem
               {...formItemLayout}
               label={<FormattedMessage id="form.public.label" />}
@@ -222,6 +231,7 @@ class BasicForms extends PureComponent {
                 </FormItem>
               </div>
             </FormItem>
+            {/*button组件-------------------------------------------------------------------*/}
             <FormItem {...submitFormLayout} style={{ marginTop: 32 }}>
               <Button type="primary" htmlType="submit" loading={submitting}>
                 <FormattedMessage id="form.submit" />
